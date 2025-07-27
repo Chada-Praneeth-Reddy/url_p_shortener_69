@@ -16,7 +16,7 @@ function My() {
 
   return (
     <div>
-      <Container size={"sm"} >
+      <Container size={"lg"} >
         <Stack
       h={300}
       bg="var(--mantine-color-body)"
@@ -25,8 +25,8 @@ function My() {
       gap="lg"
     >
       <Avatar src={profileData?.avatar} alt="it's me" style={{height: "100px", width: "100px"}}/>
-      <Text size={"lg"}><strong>UserName:  </strong>{profileData?.name}</Text>
-      <Text size={"lg"}><strong>Email:     </strong>{profileData?.email}</Text>
+      <Text size={"lg"}><strong style={{paddingRight: "10px"}}>UserName:  </strong>{profileData?.name}</Text>
+      <Text size={"lg"}><strong style={{paddingRight: "10px"}}>Email:</strong>{profileData?.email}</Text>
       <Text size={"lg"}><strong>Role:</strong>{profileData?.role}</Text>
         </Stack>
       

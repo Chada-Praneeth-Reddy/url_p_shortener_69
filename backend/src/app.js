@@ -8,8 +8,9 @@ import connectDB from "./db/dbConnect.js";
 import { config } from "./config.js";
 import authRouter from "./routes/authRouter.js";
 const app = express();
+import userRouter from "./routes/userRouter.js";
+import shortURLRouter from "./routes/shortURLRouter.js";
 
-// middlewares
 
 app.use(cors({
   origin: ['http://localhost:5173', 'http://127.0.0.1:5173'], // Be explicit
@@ -30,7 +31,9 @@ connectDB();
 
 
 app.use("/api/auth", authRouter);
-
+app.use("/api/user", userRouter);
+app.use("/api/s", shortURLRouter);
+// middlewares
 
 app.use(express.static(path.join(__dirname, "../../frontend/dist")));
 
