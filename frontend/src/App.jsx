@@ -7,7 +7,7 @@ import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import { HeaderMegaMenu } from './Components/Navbar/HeaderMegaMenu';
 import My from './Pages/My.jsx';
 
-
+import React from 'react';
 function App() {
   return (
     <Router>

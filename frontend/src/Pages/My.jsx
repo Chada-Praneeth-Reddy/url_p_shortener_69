@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Service from "../utils/http";
 const service = new Service();
-import { Avatar, Text } from "@mantine/core";
+import { Avatar, Container, Text ,Stack} from "@mantine/core";
 import axios from "axios";
 function My() {
   const [ profileData, setProfileData ] = useState(null);
@@ -16,8 +16,21 @@ function My() {
 
   return (
     <div>
-      <Avatar src={profileData?.avatar} alt="it's me" />
-      <Text>{profileData?.name}</Text>
+      <Container size={"sm"} >
+        <Stack
+      h={300}
+      bg="var(--mantine-color-body)"
+      align="center"
+      justify="center"
+      gap="lg"
+    >
+      <Avatar src={profileData?.avatar} alt="it's me" style={{height: "100px", width: "100px"}}/>
+      <Text size={"lg"}><strong>UserName:  </strong>{profileData?.name}</Text>
+      <Text size={"lg"}><strong>Email:     </strong>{profileData?.email}</Text>
+      <Text size={"lg"}><strong>Role:</strong>{profileData?.role}</Text>
+        </Stack>
+      
+      </Container>
     </div>
   );
 }
